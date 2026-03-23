@@ -28,6 +28,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/tasks", taskRoutes);
 
+app.get('/', (req, res) => {
+  res.send('API is running successfully 🚀');
+});
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.statusCode || 500).json({
